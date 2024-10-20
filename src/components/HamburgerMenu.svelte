@@ -1,33 +1,29 @@
 <script lang="ts">
-  //   import { useState } from "react";
+  let isOpen = false;
 
-  // export default function HamburgerMenu() {
-  //   const [isOpen, setIsOpen] = useState(false);
-
-  //   const handleToggleMenu = () => {
-  //     setIsOpen(!isOpen);
-  //   };
+  const handleToggleMenu = () => {
+    isOpen = !isOpen;
+  };
 </script>
 
 <div class="hamburger-menu">
-  <div class="hamburger-icon" onClick={handleToggleMenu}>
+  <!-- svelte-ignore a11y-click-events-have-key-events -->
+  <!-- svelte-ignore a11y-no-static-element-interactions -->
+  <div class="hamburger-icon" on:click={handleToggleMenu}>
     <div class="bar"></div>
     <div class="bar"></div>
     <div class="bar"></div>
   </div>
   <nav class={`hamburger-nav ${isOpen ? "open" : ""}`}>
     <ul class={`menu-items ${isOpen ? "open" : ""}`}>
+      <!-- svelte-ignore a11y-invalid-attribute -->
+      <li><a href="#">About</a></li>
+      <!-- svelte-ignore a11y-invalid-attribute -->
+      <li><a href="#">Services</a></li>
+      <!-- svelte-ignore a11y-invalid-attribute -->
+      <li><a href="#">Projects</a></li>
       <li>
-        <a href="#">About</a>
-      </li>
-      <li>
-        <a href="#">Services</a>
-      </li>
-      <li>
-        <a href="#">Projects</a>
-      </li>
-      <li>
-        <button class="menu-items-button" type="button"> contact </button>
+        <button class="menu-items-button" type="button">Contact</button>
       </li>
     </ul>
   </nav>
