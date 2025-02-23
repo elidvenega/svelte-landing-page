@@ -4,7 +4,11 @@
   import SecondImg from "../assets/images/image-thomas.jpg";
   import ThirdImg from "../assets/images/image-jennie.jpg";
 
-  export let subTitle: string;
+  interface Props {
+    subTitle: string;
+  }
+
+  let { subTitle }: Props = $props();
 
   const testimonialsData: Content = {
     cellBlocks: [

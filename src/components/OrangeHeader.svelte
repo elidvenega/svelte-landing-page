@@ -2,7 +2,11 @@
   import ArrowImg from "../assets/images/icon-arrow-down.svg";
   import LogoImg from "../assets/images/logo.svg";
 
-  export let title:string;
+  interface Props {
+    title: string;
+  }
+
+  let { title }: Props = $props();
 </script>
 
 <header class="header">
